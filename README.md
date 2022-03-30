@@ -22,4 +22,17 @@ This is a snippet of the final data:
 The correlation coefficients (below) between the variables show that the death rates due to ambient air pollution increase with the Air Quality Index (which is the inverse of goodness of air quality). But it seems to be decreasing with population density and increasing with GDP which is unexpected. In order to study the relationships better, I’ve used an ordinary least squares regression with death rate as the dependent variable, GDP, avg_aqi and population density as independent variables. 
 
 From the regression results, it has ben found that GDP has a negative coefficient and a p-value of 0.079 suggesting statistical significance of the relationship between GDP and death rates at 10% confidence level. The p-value of the interaction term between GDP and air quality index is 0.045 suggesting statistical significance at 5% confidence level. It is also worth noting that the R-squared value of this regression is quite low, suggesting low explanatory power of the variables.
+
 The below chart attempts to show this interaction effect of GDP and Air Quality Index on the death rates. We can see that on average, for a group of countries having the same AQI, the death rate increases with decreasing GDP. That means, the effects of bad air quality are worse in poorer countries when compared to countries with higher GDP.
+![Alt text](Chart1.png?raw=true "Title")
+
+The below graph shows the relationship between death rates due all the three country level characteristics (air quality, GDP and population density) of the top 50 countries sorted by GDP. The colors of the bubbles depict avg_aqi and sizes depict population density. It can be seen that countries with similar GDPs usually have higher AQI (poorer air quality) with increasing population density.
+![Alt text](Chart2.png?raw=true "Title")
+
+## Conclusions:
+1. The data shows that the effect of air pollution in terms of death rate is worse in countries with low GDP when compared to countries with high GDP.
+2. Countries with similar levels of GDP have poorer air quality with increasing population density
+3. Ordinary Least Squares on the data shows statistically significant relationship of the interaction between GDP and air quality on the death rate.
+
+## Further Research
+A low R-squared value is observed. This shows the low explanatory power of the variables. And could possibly mean that other factors like quality and accessibility of healthcare and measures to curb the effects of air pollution also play an important role in determining deaths due to bad air quality. Therefore, further research to collect and analyze healthcare and environmental data could result in better understanding of the effects of air pollution.
