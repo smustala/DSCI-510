@@ -15,4 +15,11 @@ The mortality data for the number of deaths occurring in each country due to amb
 ## Data Cleaning:
 The merged data has been cleaned by removing missing data, converting the air quality data and population density into required data types. The air quality indices of two largest cities of each country are averaged into “avg_aqi”. This is used as a proxy for the overall air quality of the country. The countries are further divided into groups of GDP : Low, Mid and High. "Low" consists of countries falling below 25 percentile, "Medium" consists of countries falling between 25 and 75 percentile, and "High" consists of countries falling above 75 percentile.
 
+This is a snippet of the final data:
 ![Alt text](data_snippet.png?raw=true "Title")
+
+## Analysis:
+The correlation coefficients (below) between the variables show that the death rates due to ambient air pollution increase with the Air Quality Index (which is the inverse of goodness of air quality). But it seems to be decreasing with population density and increasing with GDP which is unexpected. In order to study the relationships better, I’ve used an ordinary least squares regression with death rate as the dependent variable, GDP, avg_aqi and population density as independent variables. 
+
+From the regression results, it has ben found that GDP has a negative coefficient and a p-value of 0.079 suggesting statistical significance of the relationship between GDP and death rates at 10% confidence level. The p-value of the interaction term between GDP and air quality index is 0.045 suggesting statistical significance at 5% confidence level. It is also worth noting that the R-squared value of this regression is quite low, suggesting low explanatory power of the variables.
+The below chart attempts to show this interaction effect of GDP and Air Quality Index on the death rates. We can see that on average, for a group of countries having the same AQI, the death rate increases with decreasing GDP. That means, the effects of bad air quality are worse in poorer countries when compared to countries with higher GDP.
